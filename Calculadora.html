@@ -63,12 +63,12 @@
 </html>
 <script>
     function calculo() {
-        var qtdfrota = Number(input_qtdfrota.value);
-        var qtdmanutencoes = Number(input_qtdmanutencoes.value);
-        var qtdfuncionarios = Number(input_qtdfuncionarios.value);
-        var salariomed = Number(input_salariomed.value);
-        var gastomanu = qtdmanutencoes * 300000;
-        var gastosal = qtdfuncionarios * salariomed;
+        var qtdFrota = Number(input_qtdfrota.value);
+        var qtdManutencoes = Number(input_qtdmanutencoes.value);
+        var qtdFuncionarios = Number(input_qtdfuncionarios.value);
+        var salarioMed = Number(input_salariomed.value);
+        var gastoManu = qtdmanutencoes * 300000;
+        var gastoSal = qtdfuncionarios * salariomed;
         div_mensagem.innerHTML = `Considerando a sua frota de ${qtdfrota} aeronaves, você perde em média até R$<u>${gastomanu + gastosal}</u> por mês! Com o nosso projeto, esse valor pode ser reduzido em até <b>30%!<b>`;
     }
 </script>
