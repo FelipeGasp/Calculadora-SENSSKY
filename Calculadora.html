@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html lang="ptbr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - SENSSKY</title>
     <style>
-        .titulo{
+        .titulo {
             color: blue;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             -webkit-text-stroke: 1px;
             -webkit-text-stroke-color: black;
             text-align: center;
         }
-        .textocabecario{
+
+        .textocabecario {
             color: black;
             font-family: 'Times New Roman', Times, serif;
             text-align: center;
 
         }
-        .fundo{
+
+        .fundo {
             background-color: burlywood;
         }
-        .textonormal{
+
+        .textonormal {
             color: black;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: justify;
         }
-        .fundosecdiv{
+
+        .fundosecdiv {
             background-color: brown;
             width: 45%;
         }
-        
     </style>
 </head>
+
 <body class="fundo">
-<div style="background-color: rgb(255, 255, 255);">
-    <h1 class="titulo"><strong>SENSSKY</strong></h1>
-    <p class="textocabecario">  <i>Seja bem vindo a calculadora do projeto SENSSKY, nessa calculadora financeira, você terá uma ideia do impacto negativo que falhas no motor e suas manutenções custam ao seu capital!</i> </p>
-</div>
-<div class="fundosecdiv">
-    <p class="textonormal">Insira alguns dados para começar!</p><br>
-    <input type="number" id="input_qtdfrota"> Quantos aviões você possui?<br>
-    <input type="number" id="input_qtdmanutencoes"> Quantas manutenções você faz por mês?<br>
-    <input type="number" id="input_qtdfuncionarios"> Quantos funcionarios você tem para manutenção de motor?<br>
-    <input type="number" id="input_salariomed"> Qual é o salario médio da sua equipe de manutenção? <br>
-
-
-</div>
+    <div style="background-color: rgb(255, 255, 255);">
+        <h1 class="titulo"><strong>SENSSKY</strong></h1>
+        <p class="textocabecario"> <i>Seja bem vindo a calculadora do projeto SENSSKY, nessa calculadora financeira,
+                você terá uma ideia do impacto negativo que falhas no motor e suas manutenções custam ao seu
+                capital!</i> </p>
+    </div>
+    <div class="fundosecdiv">
+        <p class="textonormal">Insira alguns dados para começar!</p><br>
+        <input type="number" id="input_qtdfrota"> Quantos aviões você possui?<br>
+        <input type="number" id="input_qtdmanutencoes"> Quantas manutenções você faz por mês?<br>
+        <input type="number" id="input_qtdfuncionarios"> Quantos funcionarios você tem para manutenção de motor?<br>
+        <input type="number" id="input_salariomed"> Qual é o salario médio da sua equipe de manutenção? <br>
+    </div>
+    <br>
+    <button onclick="calculo()"><b>CALCULAR PREJUIZO!</b></button>
+    <br>
+    <br>
+    <br>
+    <div id="div_mensagem" style="color: rgb(255, 0, 0);font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"></div>
 </body>
+
 </html>
+<script>
+    function calculo() {
+        var qtdfrota = Number(input_qtdfrota.value);
+        var qtdmanutencoes = Number(input_qtdmanutencoes.value);
+        var qtdfuncionarios = Number(input_qtdfuncionarios.value);
+        var salariomed = Number(input_salariomed.value);
+        var gastomanu = qtdmanutencoes * 300000;
+        var gastosal = qtdfuncionarios * salariomed;
+        div_mensagem.innerHTML = `Considerando a sua frota de ${qtdfrota} aeronaves, você perde em média até R$<u>${gastomanu + gastosal}</u> por mês! Com o nosso projeto, esse valor pode ser reduzido em até <b>30%!<b>`;
+    }
+</script>
